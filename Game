@@ -1,0 +1,31 @@
+score = 0
+
+print('Do you like doing sports?')
+Guest = input().lower()
+if Guest == "yes":
+  print ("Awesome, complete my quiz please")
+  score = score + 1
+elif Guest == "no":
+  print ("Either way just complete my quiz")
+else:
+  print("Just answer yes or no please")
+print('What is the best sport in the world?')
+Guest = input().lower()
+if Guest == "rugby":
+  print ("Sorry, incorrect, it's football")
+elif Guest == "football":
+  print ("Yessir")
+  score = score + 1
+else:
+  print("Wrong,its football")
+print('Who is the best player in the sport?')  
+Guest = input().lower()
+if Guest == "messi":
+  print ("Haha, your right, he's insane")
+  score = score + 1
+elif Guest == "ronaldo":
+  print ("He's really good, but maybe not the best, it's Messi")
+else:
+  print("Wrong, you need to watch more football, because the correct answer is Messi")
+  
+print("You scored "+str(score))  
