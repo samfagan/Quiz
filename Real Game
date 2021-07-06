@@ -1,0 +1,87 @@
+#global variables
+questions = [("Why?","because"),
+             ("Who?","me"),
+             ("When?","today")]
+            
+score = 0
+difficulty = "easy"
+quit = False
+
+
+def main():
+  print("Welcome to my quiz")
+  print("<---Main Menu--->")
+  print("(a) Play Game")
+  print("(b) Difficulty")
+  print("(c) Leaderboard")
+  print("(d) Exit")
+  #gets the user input
+  choice = input("Please select one:")
+  
+  #do something based on what the user typed
+  
+  if choice == "a":
+    play_game()
+  elif choice == "b":
+    difficulty()
+  elif choice == "c":
+    leadboard()
+  elif choice == "d":
+    exit()
+  else:
+    print("Invalid input")
+    main() 
+    
+def difficulty():
+  print("Choose your difficulty: ")
+  print("(a) Easy")
+  print("(b) Normal")
+  print("(c) Hard")
+  
+  choice = input("Choice: ")
+  
+  if choice == "a":
+    difficulty = "Easy"
+    print("You have chosen, Easy")
+  
+  
+  elif choice == "b":
+    difficulty = "Normal"
+    print("You have chosen, Normal")
+    
+    
+  elif choice == "c":
+    difficulty = "Hard"
+    print("You have chosen, Hard") 
+    
+    
+    
+
+
+def play_game():
+  score = ask_questions()
+  print ("you have completed the quiz, your score was "+str(score))
+  main ()
+
+def ask_questions():
+  score = 0
+  for question in questions:
+    print(question[0])
+    response = input()
+    if response == question[1]:
+      score += 1
+      print("correct")
+    else:
+      print("wrong")
+      
+      
+  return score
+
+
+def leadboard():
+  print(" #1 Sam, #2 ...")
+
+def exit():
+  print("Leave Game")
+
+main()
