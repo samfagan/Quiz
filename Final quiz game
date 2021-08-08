@@ -1,0 +1,123 @@
+#global variables
+easy_questions = [("It took Cristiano Ronaldo 27 games to score his first Champions League goal. True or false?","true"),
+             ("Former Brazil and Barcelona star Ronaldinho spent time in prison after being found to have used a fake passport. True or False?","true"),
+             ("David Beckham took ballet lessons during his time at Manchester United in order to improve his agility. True or False?","false"),
+             ("There are only Eleven players for each team on the field at once. True or False?","true"),
+             ("Any player can touch the ball with their hands while in the goal box. True or False?","false"),
+             ("Soccer is usually a high scoring game. True or False","false"),
+             ("The goalkeeper is the only player that can use their hands anywhere on the field. True or False?","false"),
+             ("Soccer is the most watched and participated-in game in the world. True or False?","true"),
+             ("The act of hitting the ball with your head is called a footer. True or False?","false"),
+             ("A goal is worth one point each. True or False?","true")]
+
+normal_questions = [("Who has won the most ballon d'ors?","messi"),
+             ("Who has won the most ballon d'ors after Messi?","ronaldo"),
+             ("Which country has won the most world cups?","brazil"),
+             ("Ronaldo is known for wearing number 7, what number is Messi known for?","10"),
+             ("Ronaldo exclaims which words when celebrating a goal?","sii"),
+             ("Which famous sportswear company is Neymar signed for?","puma"),
+             ("Which club has won the most champions league titles?","real madrid"),
+             ("Who is the only player who won the world cup 3 times?","pele"),
+             ("What was the official song of FIFA 2010 World cup?","waka waka"),
+             ("Excluding Antarctica which is the only continent who haven’t yet hosted FIFA world cup?","australia")]
+             
+hard_questions = [("Who was the first goalkeeper to score in the Premier League. Mark Bosnich, Petr Cech, Peter Schmeichel or David Seaman?","peter schmeichel"),
+                  ("Which current Premier League stadium has the largest capacity. Old Trafford, The Emirates, Eithad Stadium, or the Stadium of Light?","old trafford"),
+                  ("Which country won the most cups in the Copa America's history. Brazil, Argentina, Chile, or Uruguay?","uruguay"),
+                  ("Which Football Confederation does the Australian Kangaroos belong to. North America (CAF), Oceania Football (OFC), South American CONMEBOL, or Asian Football (AFC)?","asian football (afc)"),
+                  ("Who did Zidane headbutt in the 2006 World Cup. Cristiano Ronaldo, Francesco Totti, or Marko Materazzi?","marko materazzi"),
+                  ("Which Paraguayan player player got shot in a bar in Mexico City on the 26 of January, 2010. Kun Aguero, 2 Pac, Christian Riveros, or Salvador Cabanas?","salvador cabanas"),
+                  ("Who was the most expensive player to be transfered in football history. David Beckham, Ronaldinho, Cristiano Ronaldo, or Neymar?","neymar"),
+                  ("What does FIFA stand for in English. Foundation of International Football Association, Federeation of International Football Academy, or International Federation of Association Football?","international federation of association football"),
+                  ("Who won the Premier league in the 03 - 04 season. Manchester United, Chelsea, Arsenal, or Aston Villa?","arsenal")]            
+def main():
+  print("Welcome to my quiz")
+  print("<---Main Menu--->")
+  print("(a) Play Game")
+  print("(b) Leaderboard")
+  
+  #gets the user input
+  choice = input("Please select one:").lower()
+  
+  #do something based on what the user typed
+  
+  if choice == "a":
+    difficulty()
+  elif choice == "b":
+    leadboard()
+  else:
+    print("Invalid input")
+    main() 
+    
+def difficulty():
+  print("Choose your difficulty: ")
+  print("(a) Easy")
+  print("(b) Normal")
+  print("(c) Hard")
+  
+  choice = input("Choice: ")
+  
+  if choice == "a":
+    difficulty = "Easy"
+    play_game(easy_questions)
+      
+ 
+             
+             
+             
+             
+         
+  
+  elif choice == "b":
+    difficulty = "Normal"
+    play_game(normal_questions)
+
+    
+    
+  else:  
+    difficulty = "Hard"
+    play_game(hard_questions) 
+    
+    
+    
+
+
+def play_game(questions):
+  score = ask_questions(questions)
+  print ("you have completed the quiz, your score was "+str(score))
+  main ()
+
+def ask_questions(questions):
+  score = 0
+  for question in questions:
+    print(question[0])
+    response = input().lower()
+    if response == question[1]:
+      score += 1
+      print("correct")
+    elif response == "exit" .lower():
+      break 
+    else:
+      print("wrong")
+      
+      
+      
+  return score
+
+
+def leadboard():
+  username = ["Sam (Hard - 9)", "Neymar (Easy - 6)", "Messi (Normal - 8)"]
+
+  # 1. append()
+  print('Current Leaderboard List'+str(username))
+
+  f = input("Please enter a name:\n")
+  username.append(f)
+
+  print('Updated Leaderboard List'+str(username))
+
+
+  
+
+
+main()
